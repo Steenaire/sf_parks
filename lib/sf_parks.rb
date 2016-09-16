@@ -24,6 +24,8 @@ module SfParks
       @psa_manager = park[11]
       @psa_email = park[12]
       @psa_phone_number = park[13]
+      @latitude = park[18][1].to_f
+      @longitude = park[18][2].to_f
 
     end
 
