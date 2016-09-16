@@ -30,11 +30,18 @@ module SfParks
       all_parks_array = Unirest.get("https://data.sfgov.org/api/views/z76i-7s65/rows.json").body["data"]
       parks = []
 
-      all_parks_array.each do |park|
-        parks << Park.new(park)
+      all_parks_array.each_with_index do |park, index|
+        unless index == 0 #Skip the first one, because it is all just headers and not a park
+          parks << Park.new(park)
+        end
       end
       return parks
     end
+
+    # def self.find(id)
+    #   videogame_hash = Unirest.get("#{ENV['DOMAIN']}/videogames/#{id}.json", headers:{ "Accept" => "application/json", "Authorization" => "Token token=#{ENV['VIDEOGAMEAPIKEY']}", "X-User-Email" => "#{ENV['STEENEMAIL']}" }).body
+    #   return Videogame.new(videogame_hash)
+    # end
 
     def self.create_foodtrucks(foodtruck_array)
 
