@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{An API Wrapper for SF Parks}
   spec.description   = %q{This is an API wrapper for the SF Parks API at https://data.sfgov.org/api/views/z76i-7s65}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/Steenaire/sf_parks"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
