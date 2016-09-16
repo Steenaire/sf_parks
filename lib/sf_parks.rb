@@ -39,10 +39,9 @@ module SfParks
       return parks
     end
 
-    # def self.find(id)
-    #   videogame_hash = Unirest.get("#{ENV['DOMAIN']}/videogames/#{id}.json", headers:{ "Accept" => "application/json", "Authorization" => "Token token=#{ENV['VIDEOGAMEAPIKEY']}", "X-User-Email" => "#{ENV['STEENEMAIL']}" }).body
-    #   return Videogame.new(videogame_hash)
-    # end
+    def self.find(id)
+      self.all.find {|park| park.id == id }
+    end
 
     def self.create_foodtrucks(foodtruck_array)
 
