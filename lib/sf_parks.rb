@@ -4,7 +4,7 @@ require "unirest"
 module SfParks
   class Park
 
-    attr_reader :name, :address, :type, :service_area, :psa_manager, :psa_email, :psa_phone_number
+    attr_reader :id, :name, :address, :type, :service_area, :psa_manager, :psa_email, :psa_phone_number
 
     def initialize(park)
       @name = park[8].downcase.split.map(&:capitalize).join(' ')
@@ -18,6 +18,7 @@ module SfParks
         @address = nil
       end
 
+      @id = park[0]
       @type = park[9]
       @service_area = park[10]
       @psa_manager = park[11]
