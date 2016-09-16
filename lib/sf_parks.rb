@@ -1,5 +1,6 @@
 require "sf_parks/version"
+require "unirest"
 
 module SfParks
-  # Your code goes here...
+  
 end
